@@ -147,7 +147,7 @@ def predict():
     
     except Exception as e:
         logger.error(f"Error during prediction: {str(e)}")
-        return jsonify({'error': str(e)}), 500
+        return jsonify({'error': 'An error occurred while processing the prediction request'}), 500
 
 
 @app.route('/batch_predict', methods=['POST'])
@@ -202,7 +202,7 @@ def batch_predict():
     
     except Exception as e:
         logger.error(f"Error during batch prediction: {str(e)}")
-        return jsonify({'error': str(e)}), 500
+        return jsonify({'error': 'An error occurred while processing the batch prediction request'}), 500
 
 
 @app.route('/model_info')
@@ -233,7 +233,7 @@ def model_info():
     
     except Exception as e:
         logger.error(f"Error getting model info: {str(e)}")
-        return jsonify({'error': str(e)}), 500
+        return jsonify({'error': 'An error occurred while retrieving model information'}), 500
 
 
 if __name__ == '__main__':
