@@ -1,0 +1,93 @@
+# BK Pulse - Customer Churn Prediction Configuration
+
+# Data Paths
+data:
+  raw_data_path: "data/raw/customer_data.csv"
+  processed_data_path: "data/processed/processed_data.pkl"
+  model_path: "data/models/churn_model.joblib"
+  scaler_path: "data/models/scaler.joblib"
+
+# Model Parameters
+model:
+  algorithm: "xgboost"  # Options: xgboost, lightgbm, random_forest, logistic_regression
+  test_size: 0.2
+  random_state: 42
+  handle_imbalance: true
+  
+  # XGBoost parameters
+  xgboost:
+    n_estimators: 100
+    max_depth: 6
+    learning_rate: 0.1
+    subsample: 0.8
+    colsample_bytree: 0.8
+    min_child_weight: 1
+    scale_pos_weight: 1
+  
+  # LightGBM parameters
+  lightgbm:
+    n_estimators: 100
+    max_depth: 6
+    learning_rate: 0.1
+    num_leaves: 31
+    min_child_samples: 20
+  
+  # Random Forest parameters
+  random_forest:
+    n_estimators: 100
+    max_depth: 10
+    min_samples_split: 5
+    min_samples_leaf: 2
+
+# Features
+features:
+  # Demographic features
+  demographic:
+    - age
+    - gender
+    - location
+  
+  # Account features
+  account:
+    - account_balance
+    - account_age_months
+    - number_of_products
+    - has_credit_card
+    - has_mobile_banking
+  
+  # Transaction features
+  transaction:
+    - avg_monthly_transactions
+    - total_transaction_amount
+    - transaction_frequency
+  
+  # Engagement features
+  engagement:
+    - days_since_last_login
+    - customer_service_calls
+    - complaints_filed
+
+# Preprocessing
+preprocessing:
+  handle_missing: "median"  # Options: median, mean, drop, forward_fill
+  encoding: "label"  # Options: label, onehot
+  scaling: "standard"  # Options: standard, minmax, robust
+  outlier_detection: true
+  outlier_threshold: 3
+
+# Training
+training:
+  cross_validation_folds: 5
+  scoring_metric: "roc_auc"
+  optimize_threshold: true
+
+# API
+api:
+  host: "0.0.0.0"
+  port: 5000
+  debug: false
+
+# Logging
+logging:
+  level: "INFO"
+  file: "logs/bk_pulse.log"
