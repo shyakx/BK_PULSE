@@ -2,6 +2,10 @@
 
 A comprehensive retention management platform built specifically for Bank of Kigali's Retention Department. This application provides role-based dashboards, campaign management, and customer retention tools for the retention team.
 
+## 🔄 **Updated Model Integration**
+
+This project now integrates with the new improved churn prediction model from the [BK_PULSE GitHub repository](https://github.com/shyakx/BK_PULSE.git). The new model provides better accuracy and performance compared to the previous version.
+
 ## 🚀 Features
 
 - **Role-Based Dashboards**: Specialized interfaces for HOD, Senior Managers, Data Analysts, and Officers

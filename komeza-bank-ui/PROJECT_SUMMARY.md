@@ -3,6 +3,15 @@
 ## Project Overview
 **BK Pulse** is a focused churn prediction and retention system designed for Bank of Kigali (BK). The system provides essential tools for retention officers to predict customer churn and manage retention workflows without complex integrations.
 
+## 🔄 **Updated Model Integration**
+
+This project now integrates with the new improved churn prediction model from the [BK_PULSE GitHub repository](https://github.com/shyakx/BK_PULSE.git). The new model provides:
+
+- **Better Accuracy**: Improved prediction performance
+- **Enhanced Features**: Updated feature engineering
+- **Better Performance**: Optimized model architecture
+- **New Dataset**: Trained on updated customer data
+
 ## Key Features Implemented (Simplified)
 
 ### 1. **Core Churn Prediction**
